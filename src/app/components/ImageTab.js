@@ -347,7 +347,7 @@ export default function ImageTab({ hasKeys, onOpenSettings, addToast, onImageRea
           className="flex-1 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 text-sm transition active:scale-95 flex items-center justify-center gap-2"
         >
           {loading && <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />}
-          {loading ? 'Generating…' : 'Generate Image with Nano Banana Pro'}
+          {loading ? 'Generating…' : 'Generate Image with Soul Standard'}
         </button>
         {loading && status === 'queued' && (
           <button

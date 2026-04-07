@@ -1,6 +1,6 @@
 /**
  * POST /api/video
- * Step 2: Submits a video generation request to Veo 3.1 Image-to-Video.
+ * Step 2: Submits a video generation request to DoP Standard (image-to-video).
  * Body: { prompt, imageUrl, aspectRatio?, resolution?, duration?, generateAudio? }
  */
 export async function POST(req) {
@@ -17,13 +17,12 @@ export async function POST(req) {
     const body = {
       prompt,
       image_url: imageUrl,
-      aspect_ratio: aspectRatio,
-      resolution,
+      ...(aspectRatio && { aspect_ratio: aspectRatio }),
+      ...(resolution && { resolution }),
       duration,
-      generate_audio: generateAudio,
     };
 
-    const response = await fetch('https://platform.higgsfield.ai/google/veo-3.1-i2v', {
+    const response = await fetch('https://platform.higgsfield.ai/higgsfield-ai/dop/standard', {
       method: 'POST',
       headers: {
         'Authorization': `Key ${process.env.HIGGSFIELD_API_KEY}:${process.env.HIGGSFIELD_API_SECRET}`,
@@ -36,6 +35,7 @@ export async function POST(req) {
 
     return Response.json(data, { status: response.ok ? 200 : response.status });
   } catch (error) {
-    return Response.json({ error: 'Something went wrong' }, { status: 500 });
+    console.error('[/api/video]', error);
+    return Response.json({ error: error?.message ?? 'Something went wrong' }, { status: 500 });
   }
 }
