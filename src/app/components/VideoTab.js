@@ -489,13 +489,13 @@ export default function VideoTab({ hasKeys, onOpenSettings, addToast, imageFromI
         <div className="rounded-xl bg-gray-800/50 border border-gray-700 px-5 py-4 flex flex-col gap-3">
           <StepIndicator
             step={1}
-            label="Generating first frame with Nano Banana Pro…"
+            label="Generating first frame with Soul Standard…"
             state={step1State}
           />
           <div className="w-px h-4 bg-gray-700 ml-3.5" />
           <StepIndicator
             step={2}
-            label={`Creating video with Veo 3.1… (est. 80–100s for ${duration}s video)`}
+            label={`Creating video with DoP Standard… (est. 30–60s for ${duration}s video)`}
             state={step2State}
           />
         </div>

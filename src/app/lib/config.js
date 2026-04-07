@@ -2,8 +2,8 @@
 export const API_BASE = 'https://platform.higgsfield.ai';
 
 export const MODELS = {
-  IMAGE: 'nano-banana-pro/edit',
-  VIDEO: 'google/veo-3.1-i2v',
+  IMAGE: 'higgsfield-ai/soul/standard',
+  VIDEO: 'higgsfield-ai/dop/standard',
 };
 
 // Polling intervals (ms)

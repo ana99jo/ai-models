@@ -199,7 +199,7 @@ export default function Home() {
           <a href="https://cloud.higgsfield.ai" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition">
             Higgsfield API
           </a>
-          {' '}· Built with Nano Banana Pro &amp; Veo 3.1
+          {' '}· Built with Soul Standard &amp; DoP Standard
         </span>
         <span className="flex items-center gap-3">
           <a href="https://docs.higgsfield.ai" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">

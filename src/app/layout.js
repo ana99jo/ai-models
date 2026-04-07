@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "AI Influencer Content Generator — Higgsfield",
-  description: "Generate photorealistic images and cinematic videos for influencer content using Nano Banana Pro and Veo 3.1",
+  description: "Generate photorealistic images and cinematic videos for influencer content using Higgsfield Soul and DoP models",
 };
 
 export default function RootLayout({ children }) {
