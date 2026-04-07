@@ -19,7 +19,6 @@ export async function GET(req, { params }) {
 
     return Response.json(data, { status: response.ok ? 200 : response.status });
   } catch (error) {
-    console.error('[/api/status]', error);
-    return Response.json({ error: error?.message ?? 'Something went wrong' }, { status: 500 });
+    return Response.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

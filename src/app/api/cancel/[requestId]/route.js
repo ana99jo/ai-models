@@ -21,7 +21,6 @@ export async function POST(req, { params }) {
       { status: response.status === 202 ? 200 : 400 }
     );
   } catch (error) {
-    console.error('[/api/cancel]', error);
-    return Response.json({ error: error?.message ?? 'Something went wrong' }, { status: 500 });
+    return Response.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

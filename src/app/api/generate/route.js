@@ -1,6 +1,6 @@
 /**
  * POST /api/generate
- * Submits an image generation request to Soul Standard.
+ * Submits an image generation request to Nano Banana Pro.
  * Body: { prompt, referenceImage?, aspectRatio?, resolution? }
  * referenceImage should be a base64 data URL (e.g. "data:image/jpeg;base64,...")
  */
@@ -15,7 +15,7 @@ export async function POST(req) {
       ...(resolution && { resolution }),
     };
 
-    const response = await fetch('https://platform.higgsfield.ai/higgsfield-ai/soul/standard', {
+    const response = await fetch('https://platform.higgsfield.ai/nano-banana-pro/edit', {
       method: 'POST',
       headers: {
         'Authorization': `Key ${process.env.HIGGSFIELD_API_KEY}:${process.env.HIGGSFIELD_API_SECRET}`,
@@ -28,7 +28,6 @@ export async function POST(req) {
 
     return Response.json(data, { status: response.ok ? 200 : response.status });
   } catch (error) {
-    console.error('[/api/generate]', error);
-    return Response.json({ error: error?.message ?? 'Something went wrong' }, { status: 500 });
+    return Response.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
