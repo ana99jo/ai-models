@@ -15,7 +15,11 @@ export async function GET(req, { params }) {
       }
     );
 
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+    try { data = JSON.parse(text); } catch {
+      data = { error: text.slice(0, 200) };
+    }
 
     return Response.json(data, { status: response.ok ? 200 : response.status });
   } catch (error) {
